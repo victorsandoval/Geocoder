@@ -184,6 +184,10 @@ class GoogleMaps extends AbstractHttpProvider implements LocaleAwareProvider
                 }
             }
 
+            // place id
+
+            $resultSet['place_id'] = $result->place_id;
+
             // update coordinates
             $coordinates = $result->geometry->location;
             $resultSet['latitude']  = $coordinates->lat;

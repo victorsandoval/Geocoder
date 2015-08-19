@@ -65,6 +65,8 @@ final class Address
      */
     private $timezone;
 
+    private $place_id;
+
     /**
      * @param string $streetNumber
      * @param string $streetName
@@ -82,7 +84,8 @@ final class Address
         $subLocality                      = null,
         AdminLevelCollection $adminLevels = null,
         Country $country                  = null,
-        $timezone                         = null
+        $timezone                         = null,
+        $place_id                         = null
     ) {
         $this->coordinates  = $coordinates;
         $this->bounds       = $bounds;
@@ -94,6 +97,7 @@ final class Address
         $this->adminLevels  = $adminLevels ?: new AdminLevelCollection();
         $this->country      = $country;
         $this->timezone     = $timezone;
+        $this->place_id     = $place_id;
     }
 
     /**
@@ -233,6 +237,12 @@ final class Address
     public function getTimezone()
     {
         return $this->timezone;
+    }
+
+
+    public function getPlaceId()
+    {
+        return $this->place_id;
     }
 
     /**
